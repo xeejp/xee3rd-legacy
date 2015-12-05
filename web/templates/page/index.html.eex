@@ -1,39 +1,165 @@
-<div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
-  <p class="lead">Most web frameworks make you choose between speed and a productive environment. <a href="http://phoenixframework.org">Phoenix</a> and <a href="http://elixir-lang.org">Elixir</a> give you both.</p>
-</div>
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">XEE.JP</a>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">XEE.JPとは</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">管理画面</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">教師登録</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">サインイン</a></li>
+            </ul>
+        </div>
+    </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/issues?state=open">Issues</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
-</div>
+    <div class="splash-container">
+        <div class="splash splash-head" style="padding:40px; margin-top:10px; height:300px;">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <input id="XEE_EXPERIMENT_CODE" type="text" placeholder="実験記号" style="width: 100%;">
+                    <button type="submit" class="pure-button pure-button-active" style="width: 100%;"><i class="fa fa-shopping-cart">&nbsp;実験に参加する</i></button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 class="content-head is-center">XEE.JPとは</h2>
+            <h3>XEE.JPは、<a href="http://xee.jp/team/">経済実験プロジェクトチーム</a>が開発している経済教育用オンライン実験プログラムです。中学校の「社会科」、高校の「政治・経済」、大学の経済学関連授業で手軽に経済実験を実施してもらうために広く一般に公開されています。教育目的でご自由にご利用ください。</h3>
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                    <h3 class="content-subhead">
+                        <i class="fa fa-mobile"></i>
+                        スマホでできる
+                    </h3>
+                    <p>
+                        スマホ、タブレットPC、PCからブラウザを開くことですぐに実験が始められます。特別な設定は必要ありません。
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-rocket"></i>
+                        どこでもできる
+                    </h3>
+                    <p>
+                        インターネットからXEE.JPにアクセスすれば、どのネットワークからでも利用できます。遠隔講義授業の実施や、経済行動の地域間比較・国際比較データ取得も容易です。
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-th-large"></i>
+                        すぐに始められる
+                    </h3>
+                    <p>
+                        プログラムを書いたり、ソフトをインストールする必要はありません。XEE.JPにアクセスして、実験記号を入力するだけで実験を始められます。
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        メンテナンス・フリー
+                    </h3>
+                    <p>
+                        システムの不具合はプロジェクトチームが修正します。教員は管理ページで最低限の実験設定を行うだけで実験を管理できます。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon l-box-lrg pure-g">
+            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+                <img class="pure-img-responsive" alt="File Icons" width="300" src="/img/common/file-icons.png">
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+                <h2 class="content-head content-head-ribbon">カスタム実験を実施したい方へ</h2>
+
+                <p>
+                    カスタム実験（オリジナル実験）を実施したい方は、以下の３通りの方法のどれかで実施できます。
+                    <ul>
+                      <li>プロジェクトチームのスタッフを直接雇用する。</li>
+                      <li>鹿児島高専林良平研究室と受託研究契約を結び、林研究室が実験を作成する。</li>
+                      <li>自作したプログラムをプロジェクトチームに提出し、審査を受審する。</li>
+                    </ul>
+                    詳細は林研究室までお気軽にご連絡ください。
+                </p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="content-head is-center">教師登録</h2>
+
+            <div class="pure-g">
+                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <form class="pure-form pure-form-stacked">
+                        <fieldset>
+
+                            <label for="orgnization">組織名</label>
+                            <select id="orgnization">
+                              <option selected>一般の方</option>
+                              <option>近畿大学経済学部</option>
+                              <option>明治大学商学部</option>
+                              <option>大阪大学経済学部</option>
+                              <option>経済実験プロジェクトチーム</option>
+                            </select>
+
+                            <label for="name">教師ユーザー名</label>
+                            <input id="name" type="text" placeholder="教師ユーザー名">
+
+                            <label for="password">パスワード</label>
+                            <input id="password" type="password" placeholder="パスワード">
+
+                            <label for="password_conform">パスワード（確認）</label>
+                            <input id="password_conform" type="password" placeholder="パスワード（確認）">
+
+                            <button type="submit" class="pure-button">新規登録</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                    <h4>教師登録について</h4>
+                    <p>教師登録はどなたでもできます。登録は無料です。</p>
+                    <h4>「組織名」「教師ユーザー名」「パスワード」</h4>
+                    <p>林研究室と受託研究契約を結んでいる組織の方は、「組織名」からご自身の組織をお選びください。それ以外の方は「一般の方」をお選びください。XEE.JPは一般の方もご自由にご登録・ご利用いただけます。<br/>
+                    「教師ユーザー名」、「パスワード」はお好きな文字列をご入力ください。「パスワード」は暗号化されて保存されるため、プロジェクトチームのメンバーを含めて誰にも知られることはありません。</p>
+                    <h4>実験を始める方法</h4>
+                    <p>ページ最上段にある入力フォームに「教師ユーザ名」と「パスワード」を入力すると、実験管理画面を利用できます。</p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer l-box is-center">
+        <h4>連絡先</h4>
+        <p>ご不明な点、ご意見・ご要望等がございましたら、下記までご遠慮なくご連絡ください。</p>
+        <p>鹿児島工業高等専門学校　林　良平：<a href="">お問い合わせフォーム</a>電話：0995-42-9000 (代表)</p>
+        </div>
+
+    </div>
+
+
+    <script>
+    (function (root) {
+    // -- Data --
+    root.YUI_config = {"version":"3.17.2","base":"http:\u002F\u002Fyui.yahooapis.com\u002F3.17.2\u002F","comboBase":"http:\u002F\u002Fyui.yahooapis.com\u002Fcombo?","comboSep":"&","root":"3.17.2\u002F","filter":"min","logLevel":"error","combine":true,"patches":[],"maxURLLength":2048,"groups":{"vendor":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002F","root":"\u002F","modules":{"css-mediaquery":{"path":"vendor\u002Fcss-mediaquery.js"},"handlebars-runtime":{"path":"vendor\u002Fhandlebars.runtime.js"}}},"app":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002Fjs\u002F","root":"\u002Fjs\u002F"}}};
+    root.app || (root.app = {});
+    root.app.yui = {"use":function () { return this._bootstrap('use', [].slice.call(arguments)); },"require":function () { this._bootstrap('require', [].slice.call(arguments)); },"ready":function (callback) { this.use(function () { callback(); }); },"_bootstrap":function bootstrap(method, args) { var self = this, d = document, head = d.getElementsByTagName('head')[0], ie = /MSIE/.test(navigator.userAgent), callback = [], config = typeof YUI_config != "undefined" ? YUI_config : {}; function flush() { var l = callback.length, i; if (!self.YUI && typeof YUI == "undefined") { throw new Error("YUI was not injected correctly!"); } self.YUI = self.YUI || YUI; for (i = 0; i < l; i++) { callback.shift()(); } } function decrementRequestPending() { self._pending--; if (self._pending <= 0) { setTimeout(flush, 0); } else { load(); } } function createScriptNode(src) { var node = d.createElement('script'); if (node.async) { node.async = false; } if (ie) { node.onreadystatechange = function () { if (/loaded|complete/.test(this.readyState)) { this.onreadystatechange = null; decrementRequestPending(); } }; } else { node.onload = node.onerror = decrementRequestPending; } node.setAttribute('src', src); return node; } function load() { if (!config.seed) { throw new Error('YUI_config.seed array is required.'); } var seed = config.seed, l = seed.length, i, node; if (!self._injected) { self._injected = true; self._pending = seed.length; } for (i = 0; i < l; i++) { node = createScriptNode(seed.shift()); head.appendChild(node); if (node.async !== false) { break; } } } callback.push(function () { var i; if (!self._Y) { self.YUI.Env.core.push.apply(self.YUI.Env.core, config.extendedCore || []); self._Y = self.YUI(); self.use = self._Y.use; if (config.patches && config.patches.length) { for (i = 0; i < config.patches.length; i += 1) { config.patches[i](self._Y, self._Y.Env._loader); } } } self._Y[method].apply(self._Y, args); }); self.YUI = self.YUI || (typeof YUI != "undefined" ? YUI : null); if (!self.YUI && !self._injected) { load(); } else if (self._pending <= 0) { setTimeout(flush, 0); } return this; }};
+    root.YUI_config || (root.YUI_config = {});
+    root.YUI_config.seed = ["http:\u002F\u002Fyui.yahooapis.com\u002Fcombo?3.17.2\u002Fyui\u002Fyui-min.js"];
+    root.YUI_config.groups || (root.YUI_config.groups = {});
+    root.YUI_config.groups.app || (root.YUI_config.groups.app = {});
+    root.YUI_config.groups.app.modules = {"start\u002Fapp":{"path":"start\u002Fapp.js","requires":["handlebars-runtime","yui","base-build","router","pjax-base","view","start\u002Fmodels\u002Fgrid","start\u002Fviews\u002Finput","start\u002Fviews\u002Foutput","start\u002Fviews\u002Fdownload"]},"start\u002Fmodels\u002Fgrid":{"path":"start\u002Fmodels\u002Fgrid.js","requires":["yui","querystring","base-build","model","model-sync-rest","start\u002Fmodels\u002Fmq"]},"start\u002Fmodels\u002Fmq":{"path":"start\u002Fmodels\u002Fmq.js","requires":["css-mediaquery","attribute","base-build","model","model-list"]},"start\u002Fviews\u002Fdownload":{"path":"start\u002Fviews\u002Fdownload.js","requires":["yui","base-build","querystring","view"]},"start\u002Fviews\u002Finput":{"path":"start\u002Fviews\u002Finput.js","requires":["base-build","start\u002Fmodels\u002Fmq","start\u002Fviews\u002Ftab"]},"start\u002Fviews\u002Foutput":{"path":"start\u002Fviews\u002Foutput.js","requires":["base-build","escape","start\u002Fviews\u002Ftab"]},"start\u002Fviews\u002Ftab":{"path":"start\u002Fviews\u002Ftab.js","requires":["yui","base-build","view"]}};
+    }(this));
+    </script>
+    <script>
+    app.yui.use('node-base', 'node-event-delegate', function (Y) {
+        // This just makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        Y.one('body').delegate('click', function (e) {
+            e.preventDefault();
+        }, 'a[href="#"]');
+    });
+    </script>
