@@ -1,23 +1,29 @@
 defmodule Xee3rd.ExperimentServer do
 
   def start_link() do
-    Agent.start_link(fn -> %{} end)
+    Agent.start_link(fn -> %{} end, name: __MODULE__)
   end
 
-  def add(uid, key, experiment) do
-    Agent.update(uid, fn map -> Map.put(map, key, experiment) end)
+  def has?(key) do
+    Agent.get(__MODULE__, fn map -> Map.has_key?(key) end)
+  end
+
+  def create(key, admin_id, experiment) do
+    {:ok, uid} = Experiment.start(admin_id, experiment)
+    Agent.update(__MODULE__, fn map -> Map.put(map, key, uid) end)
+    uid
   end
 
   def get_all(uid) do
-    Agent.get(uid, fn map -> map end)
+    Agent.get(__MODULE__, fn, map -> map end)
   end
 
   def get(uid, key) do
-    Agent.get(uid, fn map -> map[key] end)
+    Agent.get(__MODULE__, fn, map -> map[key] end)
   end
 
   def change_key(uid, src, dest) do
-    Agent.update(uid, fn map ->
+    Agent.update(__MODULE__, fn map ->
       if Map.has_key?(map, src) && !Map.has_key?(map, dest) do
         tmp = map[src]
         map
@@ -28,5 +34,4 @@ defmodule Xee3rd.ExperimentServer do
       end
     end)
   end
-
 end
