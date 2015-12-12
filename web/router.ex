@@ -13,6 +13,15 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
   scope "/", Xee3rd do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
+
+    # registration page
+    get "/register", RegistrationController, :new
+    post "/register", RegistrationController, :create
+
+    # login page
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    delete "/logout", SessionController, :delete
   end
 
   scope "/host", Xee3rd do
