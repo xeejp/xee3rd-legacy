@@ -39,9 +39,7 @@
       </h3>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-3"></div>
-          <div class="col-md-3"><button class="btn btn-primary" type="submit">Create Experiment</button></div>
+          <button class="btn btn-primary pull-right" type="submit">Create Experiment</button>
         </div>
       </div>
     </form>

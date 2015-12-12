@@ -5,28 +5,28 @@
   </head>
   <body>
     <%= if @themes do %>
-      <h2>View Data</h2>
-      <table class="table table-bordered table-hover">
-        <tr>
-          <th>#</th>
-          <th>Title</th>
-        </tr>
-        <%= for theme <- @themes do %>
+      <h1>View Data</h1>
+      <h3>
+        <table class="table table-bordered table-hover">
           <tr>
-            <td>
-            </td>
-            <td>
-              <%= theme[:name] %>
-            </td>
+            <th>#</th>
+            <th>Title</th>
           </tr>
-        <% end %>
-      </table>
+          <%= for theme <- @themes do %>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <%= theme[:name] %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </h3>
     <% end %>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3"><!--<button class="btn btn-primary" type="button" onClick="">Token Update</button>--></div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3"><button class="btn btn-primary" type="button" onclick="location.href='/host/experiments/'">Experiment Page</button></div>
+        <button class="btn btn-primary pull-right" type="button" onclick="location.href='/host/experiments/'">Experiment Page</button>
       </div>
     </div>
   </body>

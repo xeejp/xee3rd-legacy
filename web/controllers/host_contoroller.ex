@@ -33,7 +33,7 @@ defmodule Xee3rd.HostController do
     render conn, "index.html"
   end
 
-  def test() do
+  defp test() do
     Logger.debug inspect Xee3rd.ThemeServer.get_all
     Xee3rd.ThemeServer.add :test,  %{name: "Ricardo Comparison Production Theory"}
     Xee3rd.ThemeServer.add :test1, %{name: "Double Auction"}
