@@ -1,5 +1,3 @@
-<h1>Registration</h1>
-
 <%= form_for @changeset, registration_path(@conn, :create), fn form -> %>
   <%= if form.errors != [] do %>
     <div class="alert alert-danget">
@@ -12,17 +10,21 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <label>User Name</label>
-    <%= text_input form, :name, class: "form-control" %>
-  </div>
+  <center>
+    <div class="row">
+      <div class="col-md-4 content-area" style="float:none;">
+        <div class="form-group">
+          <input class="form-control" id="user_name" name="user[name]" type="text"  placeholder="ユーザID">
+        </div>
 
-  <div class="form-group">
-    <label>Password</label>
-    <%= password_input form, :password, class: "form-control" %>
-  </div>
+        <div class="form-group">
+          <input class="form-control" id="user_password" name="user[password]" type="password"  placeholder="パスワード">
+        </div>
 
-  <div class="form-group">
-    <%= submit "Register", class: "btn btn-primary" %>
-  </div>
+        <div class="form-group">
+          <%= submit "新規登録", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </center>
 <% end %>

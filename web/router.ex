@@ -21,7 +21,7 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
     # login page
     get "/login", SessionController, :new
     post "/login", SessionController, :create
-    delete "/logout", SessionController, :delete
+    get "/logout", SessionController, :delete
   end
 
   scope "/host", Xee3rd do
