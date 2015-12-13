@@ -9,7 +9,7 @@
         <li><a href="#">XEE.JPについて</a></li>
         <%= if logged_in?(@conn) do %>
           <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" herf="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <%= current_user(@conn).name %>&nbsp;<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
@@ -76,6 +76,11 @@
 
 <footer style="text-align:center; padding:10px;">
   <hr/>
-  <small>Copyright (C) 2015 <a href="#">Ryohei HAYASHI</a> All Rights Reserved.</small>
+  <small>Copyright (C) 2015 <a href="https://www.facebook.com/hryohei">Ryohei HAYASHI</a> All Rights Reserved.</small>
 </footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
