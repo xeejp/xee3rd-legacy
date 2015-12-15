@@ -1,5 +1,12 @@
 import {Socket} from "phoenix"
+import Vue from "vue"
 
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+});
 // let socket = new Socket("/ws")
 // socket.connect()
 // let chan = socket.chan("topic:subtopic", {})
@@ -8,6 +15,8 @@ import {Socket} from "phoenix"
 // })
 
 let App = {
+    run: () => {
+    }
 }
 
 export default App

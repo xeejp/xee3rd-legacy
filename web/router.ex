@@ -16,10 +16,7 @@ defmodule Xee3rd.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/experiment/:expid", ExperimentController, :index
+    get "/host/experiment/:expid", ExperimentController, :admin
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Xee3rd do
-  #   pipe_through :api
-  # end
 end
