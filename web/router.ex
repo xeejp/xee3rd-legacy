@@ -22,6 +22,9 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
     get "/login", SessionController, :new
     post "/login", SessionController, :create
     get "/logout", SessionController, :delete
+
+    get "/experiment/:expid", ExperimentController, :index
+    get "/host/experiment/:expid", ExperimentController, :host
   end
 
   scope "/host", Xee3rd do
@@ -32,9 +35,4 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
     get "/experiments", HostController, :experiments
     post "/experiments/create", HostController, :create
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Xee3rd do
-  #   pipe_through :api
-  # end
 end
