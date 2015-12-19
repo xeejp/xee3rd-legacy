@@ -5,7 +5,14 @@ defmodule Xee3rd.ExperimentController do
 
   def index(conn, %{"x_id" => x_id}) do
     if Xee3rd.ExperimentServer.has?(x_id) do
-      # TODO : has session, or not
+      if (get_session(conn, x_id) == x_id) do
+        if (get_session(conn, :user_id) == nil) do
+          put_session(conn, :x_id, x_id)
+        end
+      else
+        put_session(conn, :user_id, "") # Generate unique user id
+        put_session(conn, :x_id, x_id)
+      end
       render conn, "index.html"
     else
       conn

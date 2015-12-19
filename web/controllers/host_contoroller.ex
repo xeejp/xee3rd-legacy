@@ -17,12 +17,16 @@ defmodule Xee3rd.HostController do
   #def create(conn, %{"_csrf_token" => token, "experimentName" => name, "experimentTheme" => theme}) do
     def create(conn, %{"experiment_name" => name, "theme" => theme, "id" => id}) do
     # 入力チェック　（エラーならindex.htmlにエラーをつけて返す)
-    if (name == nil) do
-      render conn, "index.html", error: "Create Experiment Error!"
+    if (name == nil || name == "") do
+      conn
+      |> put_flash(:error, "Make Experiment Error")
+      |> redirect(to: "/host")
     else
-      #Xee.3rd.HostServer.register(theme, Xee3rd.ExperimentServer.create_experiment(key, experiment_id, experiment))
-      #conn |> redirect(Router.root_path) |> id
+      #Xee3rd.HostServer.register(theme, Xee3rd.ExperimentServer.create(id, name))
+      conn
+      |> put_flash(:info, "Made New Experiment : " <> theme)
+      |> redirect(to: "/experiment/" <> id)
     end
-    render conn, "index.html"
-  end
+    #render conn, "index.html"
+    end
 end

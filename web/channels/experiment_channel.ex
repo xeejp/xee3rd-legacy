@@ -4,22 +4,18 @@ defmodule Xee3rd.ExperimentChannel do
   def join(topic, socket) do
     case String.split(topic, ":") do
       [x_id, from] ->
-        if Xee3rd.ExperimentServer.has?(x_id) do
-          socket = assign(socket, :x_id, x_id)
-          case from do
-            "host" ->
-              socket = assign(socket, :user, :host)
-              data = ExperimentServer.fetch(x_id, :host)
-              {:ok, data, socket}
-            "participant" ->
-              user = "participant"
-              socket = assign(socket, :user, user)
-              data = ExperimentServer.fetch(x_id, :participant)
-              {:ok, data, socket}
-               -> {:error, %{reason: "Subtopic is wrong."}}
-          end
-        else
-          {:error, %{reason: "x_id is not exists."}}
+        socket = assign(socket, :x_id, x_id)
+        case from do
+          "host" ->
+            socket = assign(socket, :user, :host)
+            data = ExperimentServer.fetch(x_id, :host)
+            {:ok, data, socket}
+          "participant" ->
+            user = socket.assigns[:user_id]
+            socket = assign(socket, :user, user)
+            data = ExperimentServer.fetch(x_id, :participant)
+            {:ok, data, socket}
+            -> {:error, %{reason: "Subtopic is wrong."}}
         end
         {:error, %{reason: "The format of topic is wrong."}}
     end
@@ -29,6 +25,6 @@ defmodule Xee3rd.ExperimentChannel do
     case Poison.decode(data) do
       {:ok, data} ->
         {:noreply, socket}
-  end
+    end
   end
 end
