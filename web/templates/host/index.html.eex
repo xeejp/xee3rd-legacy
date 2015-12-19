@@ -3,6 +3,11 @@
   <h2>
     <ul>
       <li>
+        <a href="/themes">
+          Themes
+        </a>
+      </li>
+      <li>
         <a href="/host/experiments">
           Experiments
         </a>

@@ -13,7 +13,7 @@
               <%= current_user(@conn).name %>&nbsp;<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">実験管理画面</a></li>
+              <li><a href="/host">実験管理画面</a></li>
               <li><hr/></li>
               <li><a href="#">お知らせ<span class="badge" style="float:right;">20</span></a></li>
               <li><a href="#">更新履歴</a></li>
