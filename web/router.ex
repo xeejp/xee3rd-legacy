@@ -13,6 +13,7 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
   scope "/", Xee3rd do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
+    get "/themes", PageController, :themes
 
     # registration page
     get "/register", RegistrationController, :new
@@ -31,7 +32,6 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
     pipe_through :browser # Use the default browser stack
     get "/", HostController, :index
     get "/index", HostController, :index
-    get "/themes", HostController, :themes
     get "/experiments", HostController, :experiments
     post "/experiments/create", HostController, :create
   end

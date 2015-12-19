@@ -1,12 +1,7 @@
 <div class="index">
-  <h2>Host Page</h2>
-  <h3>
+  <h1>Host Page</h1>
+  <h2>
     <ul>
-      <li>
-        <a href="/host/themes">
-          Themes
-        </a>
-      </li>
       <li>
         <a href="/host/experiments">
           Experiments
