@@ -24,8 +24,8 @@ defmodule Xee3rd.Router do use Xee3rd.Web, :router
     post "/login", SessionController, :create
     get "/logout", SessionController, :delete
 
-    get "/experiment/:expid", ExperimentController, :index
-    get "/host/experiment/:expid", ExperimentController, :host
+    get "/experiment/:x_id", ExperimentController, :index
+    get "/experiment/:x_id/host", ExperimentController, :host
   end
 
   scope "/host", Xee3rd do
