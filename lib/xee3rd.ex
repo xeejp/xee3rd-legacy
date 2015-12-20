@@ -11,6 +11,7 @@ defmodule Xee3rd do
       supervisor(Xee3rd.Endpoint, []),
       # Start the Ecto repository
       worker(Xee3rd.Repo, []),
+      worker(Xee3rd.StudentServer, []),
       worker(Xee3rd.HostServer, []),
       worker(Xee3rd.ThemeServer, []),
       worker(Xee3rd.ExperimentServer, []),

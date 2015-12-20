@@ -34,6 +34,4 @@ defmodule Xee3rd.HostController do
         |> redirect(to: "/experiment/" <> id <> "/host")
       end
     end
-    render conn, "index.html"
-  end
 end

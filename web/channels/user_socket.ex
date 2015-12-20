@@ -15,8 +15,12 @@ defmodule Xee3rd.UserSocket do
   #     {:ok, assign(socket, :user_id, verified_user_id)}
   #
   #  To deny connection, return `:error`.
-  def connect(_params, socket) do
-    {:ok, socket}
+  def connect(%{"x_id" => x_id, "user_id" => user_id}, socket) do
+    if Xee3rd.ExperimentServer.has?(x_id) do
+      {:ok, assign(socket, :user_id, user_id)}
+    else
+      :error
+    end
   end
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
