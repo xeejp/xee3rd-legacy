@@ -1,17 +1,53 @@
-<div class="index">
-  <h1>Host Page</h1>
-  <h2>
-    <ul>
-      <li>
-        <a href="/themes">
-          Themes
-        </a>
-      </li>
-      <li>
-        <a href="/host/experiments">
-          Experiments
-        </a>
-      </li>
-    </ul>
-  </h3>
-</div>
+<html>
+  <head>
+    <title>
+      Host index page
+    </title>
+  </head>
+  <body>
+    <div class="center-block">
+      <h1>管理者画面</h1>
+      <hr>
+      <h2>
+        <ul>
+          <li>
+            <a href="/themes">
+              実験テーマ一覧
+            </a>
+          </li>
+          <li>
+            <a href="/host/experiments">
+              実験作成画面
+            </a>
+          </li>
+        </ul>
+        </h3>
+    </div>
+    <div class="Container">
+      <%= if @experiment do %>
+        <h1>現在作成中の実験</h1>
+        <hr>
+      <h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>タイトル</th>
+              <th>実験テーマ</th>
+              <th>実験ID</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%= for exp <- @experiment do %>
+          <tr>
+            <td><%= exp[:name] %></td>
+            <td><%= exp[:theme] %></td>
+            <td><a href="/experiment/<%= exp[:x_id] %>/host"><%= exp[:x_id] %></a></td>
+          </tr>
+          <%= end %>
+          </tbody>
+        </table>
+      </h3>
+    <% end %>
+    </div>
+  </body>
+</html>
