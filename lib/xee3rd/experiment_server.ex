@@ -10,7 +10,7 @@ defmodule Xee3rd.ExperimentServer do
 
   @doc "Creates and Register a experiment."
   def create(key, experiment) do
-    {:ok, uid} = Xee3rd.Experiment.start(experiment)
+    {:ok, uid} = Xee3rd.Experiment.start_link(experiment)
     Agent.update(__MODULE__, fn map -> Map.put(map, key, uid) end)
     uid
   end
