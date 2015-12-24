@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>実験テーマ一覧</title>
+  </head>
+  <body>
+    <%= if @themes do %>
+      <h1>実験テーマ一覧</h1>
+      <h3>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>タイトル</th>
+            <th>実験実績</th>
+            <th>最終更新日</th>
+            <th>実験製作者</th>
+            <th>連絡先</th>
+            <th>実験手引書</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%= for theme <- @themes do %>
+            <tr>
+              <td></td>
+              <td><%= theme[:name] %></td>
+              <td><%= theme[:playnum] %>回終了</td>
+              <td><%= theme[:lastupdate] %></td>
+              <td><%= theme[:producer] %></td>
+              <td><%= theme[:contact] %></td>
+              <td><%= if theme[:manual] == "" do %>
+                    なし
+                  <%= else %>
+                  <a href="<%= theme[:manual] %>">あり</a>
+                  <%= end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </h3>
+    <% end %>
+    <div class="container-fluid">
+      <div class="row">
+        <button class="btn btn-primary pull-right" type="button" onclick="location.href='/host/experiments/'">実験作成画面</button>
+      </div>
+    </div>
+  </body>
+</html>

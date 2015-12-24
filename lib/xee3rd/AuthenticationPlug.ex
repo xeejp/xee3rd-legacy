@@ -1,4 +1,4 @@
- defmodule Xee3rd.AuthenticationPlug do
+defmodule Xee3rd.AuthenticationPlug do
   import Plug.Conn
   import Phoenix.Controller
 
