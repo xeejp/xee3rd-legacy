@@ -4,7 +4,8 @@
     <title>実験管理画面</title>
   </head>
   <body>
-    <h1>実験作成</h1><br>
+    <h1>実験作成</h1>
+    <hr>
     <form method="post" action="/host/experiments/create">
       <input type="hidden" name="_csrf_token" value="<%= @csrf_token %>">
       <h3>
@@ -13,7 +14,7 @@
             <div class="form-group form-group-lg">
               <label class="col-sm-4 control-label" for="experiment">実験名</label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" id="experiment" name="experiment_name" value="<%= @experiment_name %>" placeholder="">
+                <input type="text" class="form-control" id="experiment" name="experiment_name" value="<%= @experiment_name %>">
               </div>
             </div>
           </div>
@@ -31,11 +32,50 @@
               </div>
             </div>
           </div>
+          <div class="row form-group">
+            <div class="form-group form-group-lg">
+              <label class="col-sm-4 control-label" for="user_num">参加予定人数</label>
+              <div class="col-sm-6">
+                <input type="number" min="1" max="1000" class="form-control" id="user_num" name="user_num" value="<%= @user_num %>">
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="form-group form-group-lg">
+              <label class="col-sm-4 control-label" for="startDateTime">実験開始日時</label>
+              <div class="col-sm-6">
+                <input type="datetime-local" class="form-control" id="startDateTime" name="startDateTime" value="<%= @startDateTime %>">
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="form-group form-group-lg">
+              <label class="col-sm-4 control-label" for="endDateTime">実験終了日時</label>
+              <div class="col-sm-6">
+                <input type="datetime-local" class="form-control" id="endDateTime" name="endDateTime" value="<%= @endDateTime %>">
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="form-group form-group-lg">
+              <label class="col-sm-4 control-label" for="showDescription">説明</label>
+              <div class="col-sm-6">
+                <select class="form-control" id="showDescription" name="showDescription" value="<%= @showDescription %>">
+                  <option value="true">説明を表示する</option>
+                  <option value="false">説明を表示しない</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="form-group form-group-lg">
+              <label class="col-sm-4 control-label" for="x_id">実験ID</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="x_id" name="x_id" placeholder="" value="<%= @id %>">
+              </div>
+            </div>
+          </div>
         </div>
-      </h3>
-      <h3>
-        ID : <%= @id %>
-        <input type="hidden" name="id" value="<%= @id %>"></input>
       </h3>
       <div class="container-fluid">
         <div class="row">
@@ -47,6 +87,7 @@
 
     <%= if @themes do %>
       <h2>実験テーマ一覧</h2>
+      <hr>
       <h4>
         <table class="table table-striped">
           <thead>
